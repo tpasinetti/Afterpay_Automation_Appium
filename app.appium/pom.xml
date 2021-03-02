@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.afterpay</groupId>
+  <artifactId>app.appium</artifactId>
+  <version>1.0</version>
+
+  <name>app.appium</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+
+    <shutterbug.version>0.9.3</shutterbug.version>
+
+    <!--JUNIT-->
+    <junit.jupiter.api.version>5.7.0-RC1</junit.jupiter.api.version>
+    <junit.jupiter.params.version>5.7.0-RC1</junit.jupiter.params.version>
+    <junit.jupiter.engine.version>5.7.0-RC1</junit.jupiter.engine.version>
+    <junit.parameterized-test.version>1.0.0</junit.parameterized-test.version>
+    <junit.version>4.12</junit.version>
+
+    <!--LOG4J-->
+    <log4j.core.version>2.13.3</log4j.core.version>
+    <log4j.api.version>2.13.3</log4j.api.version>
+
+    <!--ALLURE-->
+    <allure.junit5.version>2.13.5</allure.junit5.version>
+    <aspectj.version>1.9.4</aspectj.version>
+    <allure.maven.version>2.10.0</allure.maven.version>
+    <allure.report.version>2.6.0</allure.report.version>
+    <allure.results.directory>${basedir}/target/allure-results</allure.results.directory>
+    <allure.report.directory>${basedir}/target/allure-report</allure.report.directory>
+    <allure.results_pattern>allure-results</allure.results_pattern>
+    <allure.maven-plugin.version>2.6</allure.maven-plugin.version>
+
+    <!--MAVEN-->
+    <maven.failsafe.plugin.version>2.22.0</maven.failsafe.plugin.version>
+    <maven.surefire-plugin.version>2.22.1</maven.surefire-plugin.version>
+    <properties>
+    </properties>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+
+    <!-- JUNIT -->
+    <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.jupiter.api.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-params -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>${junit.jupiter.params.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit.jupiter.engine.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.seitenbau.testing</groupId>
+      <artifactId>junit-parameterized-test</artifactId>
+      <version>${junit.parameterized-test.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!--LOG4J-->
+    <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j.core.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>${log4j.api.version}</version>
+    </dependency>
+
+    <!--ALLURE-->
+    <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-junit5 -->
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-junit5</artifactId>
+      <version>${allure.junit5.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!--SELENIUM-->
+    <dependency>
+      <groupId>com.assertthat</groupId>
+      <artifactId>selenium-shutterbug</artifactId>
+      <version>${shutterbug.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+    <!-- <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.141.59</version>
+</dependency> -->
+
+    <dependency>
+      <groupId>io.appium</groupId>
+      <artifactId>java-client</artifactId>
+      <version>7.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.0.0-alpha-1</version>
+    </dependency>
+
+
+  </dependencies>
+
+  <build>
+    <pluginManagement>      <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+
+      <plugins>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven.surefire-plugin.version}</version>
+          <configuration>
+            <testFailureIgnore>false</testFailureIgnore>
+            <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+            </argLine>
+            <systemProperties>
+              <property>
+                <name>junit.jupiter.extensions.autodetection.enabled</name>
+                <value>true</value>
+              </property>
+            </systemProperties>
+          </configuration>
+          <dependencies>
+            <dependency>
+              <groupId>org.aspectj</groupId>
+              <artifactId>aspectjweaver</artifactId>
+              <version>${aspectj.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-surefire-provider -->
+            <dependency>
+              <groupId>org.junit.platform</groupId>
+              <artifactId>junit-platform-surefire-provider</artifactId>
+              <version>${junit.surefire.platform.version}</version>
+              <!--<scope>test</scope>-->
+            </dependency>
+
+          </dependencies>
+        </plugin>
+
+        <!--ALLURE-->
+        <plugin>
+          <groupId>ru.yandex.qatools.allure</groupId>
+          <artifactId>allure-maven-plugin</artifactId>
+          <version>${allure.maven-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>io.qameta.allure</groupId>
+          <artifactId>allure-maven</artifactId>
+          <version>${allure.maven.version}</version>
+          <configuration>
+            <reportVersion>${allure.report.version}</reportVersion>
+            <outputDirectory>${allure.report.directory}</outputDirectory>
+            <resultsDirectory>${allure.results.directory}</resultsDirectory>
+            <reportDirectory>${allure.report.directory}</reportDirectory>
+          </configuration>
+        </plugin>
+
+        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.7.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

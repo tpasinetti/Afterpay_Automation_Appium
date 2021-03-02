@@ -75,7 +75,9 @@ You can run them through the VSCode test lab or by navigating to the project fol
 <br><b>1. Launch headless emulator:</b></br>
    `/Users/tinika.pasinetti/Library/Android/sdk/emulator/emulator -avd Pixel_3a_API_30_x86 -no-audio -no-window  (change based on your system)`
 <br><b>2. Run tests in a specific suite:</b></br>
-   `mvn clean -Dtest="CreateAccountTests"  test`
+   `mvn "-Dtest=com.afterpay.app.appium.tests.ANZ.CreateAccountTests.*Tests" test`<br><b>
+
+NOTE: the above specifies full package name to run all tests in the CreateAccount tests
    
    
 ## Generate-Allure-Report

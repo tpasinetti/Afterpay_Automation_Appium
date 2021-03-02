@@ -58,13 +58,13 @@ This file contains json object containing the different error codes in the app t
 This provides a central location for error codes used in assertions to verify the strings are correct
 
 E.g. of the JSON File
-![](images/json.png)
+![](app.appium/images/allure.png)
 
 ## Test-Structure
 The tests are tagged with Junit and Allure report tags so that they are properly categorised/grouped for the report and for tets readability
 The tags I have used are seen in the image below:
 
-![](images/weak_password_test.png)
+![](app.appium/images/weak_password_test.png)
 
 - Feel free to google allure report tags and add any that will be useful for reporting
 
@@ -88,32 +88,32 @@ This will automatically open a web browser with the test report with the results
 NOTE: To have a clean slate for reporting, instead of aggregated results, simply delete the json test result files from allure-results folder.
 To stop the server instance running the report/to re-run...in terminal enter `Ctrl+C` and then re-run `allure serve target/allure-results` if needed.
 
-![](images/allure.png)
+![](app.appium/images/allure.png)
 <br></br>
 
 The report has sections.
 The first is the test suites section that shows the results for each suite (note: each suite is a class in the src code)
 
-![](images/Suites.png)
+![](app.appium/images/Suites.png)
 <br></br>
 
 The next section is a configurable environments section that outlines the device, android version, and apk location. This is completely customisable and is dictated to via a .properties file in the project 'target/allure-results' folder. It is called environment.properties.
 
-![](images/env.png)
+![](app.appium/images/env.png)
 <br></br>
 
 The next section is the categories section which is simply bugs/defects. When a test fails, depending on the failure (exception, or assertion error etc.) it will be categorised into a category that is customisable via categories.json file in the project 'target/allure-results' folder
 
-![](images/categories.png)
+![](app.appium/images/categories.png)
 <br></br>
 When you click on one of the categories, it will display the actual causeof the failure and the difference in expected vs actual.
 
-![](images/bugs.png)
+![](app.appium/images/bugs.png)
 <br></br>
 
 The last section is the stories section, and this reads and groups from the tag @feature that is written above the tests
 
-![](images/features.png)
+![](app.appium/images/features.png)
 <br></br>
 
 

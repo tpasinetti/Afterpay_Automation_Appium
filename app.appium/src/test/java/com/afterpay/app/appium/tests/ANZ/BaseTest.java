@@ -6,9 +6,9 @@ import java.io.IOException;
 
 import com.afterpay.app.appium.appium_infrastructure.AppiumBaseClass;
 import com.afterpay.app.appium.appium_infrastructure.AppiumController;
-import com.afterpay.app.appium.screens.CompleteYourProfile.CompleteYourProfilePOM;
-import com.afterpay.app.appium.screens.CreateAccount.CreateAccountPOM;
-import com.afterpay.app.appium.screens.SMSVerification.SMSVerificationPOM;
+import com.afterpay.app.appium.screens.registration.CompleteYourProfile.CompleteYourProfilePOM;
+import com.afterpay.app.appium.screens.registration.CreateAccount.CreateAccountPOM;
+import com.afterpay.app.appium.screens.registration.SMSVerification.SMSVerificationPOM;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

@@ -14,6 +14,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.qameta.allure.Attachment;
 
+import java.io.File;
 import static io.qameta.allure.Allure.step;
 
 public class AppiumController {
@@ -33,16 +34,16 @@ public class AppiumController {
 		}
 		switch (executionOS) {
 		case ANDROID:
-            final String app = "/Users/tinika.pasinetti/Documents/Android_Code/Latest_Build/app-oceania-prod-debug.apk";
-			
+			File app  = new File("src/APK/OceaniaTest/db49b8c8a2fa604811a68c571131a979a9380a16f6c275d7978f3d8ed627c2db.apk");
+            //final String app = "/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/Latest_APKs/OceaniaQA/f79a93e0fc8bab4051bd664469b68e43074f0b94705ee97de369923ca580b07a.apk";
             
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel_3x_API_30_x86");
 			capabilities.setCapability("isHeadless", true); 
-            capabilities.setCapability(MobileCapabilityType.APP, app);
+            capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
             capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-			capabilities.setCapability("appPackage", "com.afterpaymobile");
-			capabilities.setCapability("avdArgs", "-no-window");
+			//capabilities.setCapability("appPackage", "com.afterpaymobile");
+			//capabilities.setCapability("avdArgs", "-no-window");
 			capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT, "true");
 			URL url = new URL("http://127.0.0.1:4723/wd/hub");
 			driver = new AndroidDriver(url, capabilities);

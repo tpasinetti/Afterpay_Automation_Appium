@@ -1,5 +1,7 @@
 package com.afterpay.app.appium.appium_infrastructure;
 
+import org.openqa.selenium.DeviceRotation;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,6 +16,13 @@ public class AppiumHelper {
 
 	protected String getPageSource() {
 		return AppiumController.instance.driver.getPageSource();
+	}
+
+	protected void shakeDeviceToShowDevSettings(){
+		AppiumController.instance.driver.rotate(new DeviceRotation(0,0,90));
+		AppiumController.instance.driver.rotate(new DeviceRotation(0,90,0));
+		AppiumController.instance.driver.rotate(new DeviceRotation(0,0,90));
+		AppiumController.instance.driver.rotate(ScreenOrientation.PORTRAIT);
 	}
 
 	protected void inputString(MobileElement mobileElement, String stringToBeEntered) {

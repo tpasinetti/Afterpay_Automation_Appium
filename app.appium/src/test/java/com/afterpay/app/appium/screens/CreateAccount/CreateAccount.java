@@ -14,13 +14,15 @@ public interface CreateAccount {
     public String getMobileErrorMessage();
     public String getRegistrationErrorMessage();
     public String getTitle();
+    public String getDialCode();
 
     //BUTTONS
     public void clickContinueButton();
     public Boolean isContinueButtonEnabled();
 
+    //ACTIONS
     public void enterAllCreateAccountDetails(ANZ_CreateAccountData createAccountData);
-
-      
+    public void clickCountryDropDown();
+    public void selectNZFromCountryFlagPicker();
 }
 

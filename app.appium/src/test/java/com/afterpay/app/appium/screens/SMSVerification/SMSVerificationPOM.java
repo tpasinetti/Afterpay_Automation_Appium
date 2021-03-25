@@ -20,21 +20,21 @@ public class SMSVerificationPOM extends AppiumHelper implements SMSVerification{
     }
     
     //LOCATORS
-    @FindBy(id = "com.afterpaymobile:id/title")
+    @FindBy(id = "com.afterpaymobile.qatest:id/title")
     MobileElement screenTitle;
 
-    @FindBy(id = "com.afterpaymobile:id/code_entry_error_view")
+    @FindBy(id = "com.afterpaymobile.qatest:id/code_entry_error_view")
     MobileElement codeError;
 
-    @FindBy(id = "com.afterpaymobile:id/snackbar_message")
+    @FindBy(id = "com.afterpaymobile.qatest:id/snackbar_message")
     MobileElement toastMessage;
 
     //BUTTON
-    @FindBy(id="com.afterpaymobile:id/verify_mobile_resend_button")
+    @FindBy(id="com.afterpaymobile.qatest:id/verify_mobile_resend_button")
     MobileElement mobileCodeResendButton;
 
     //FIELD
-    @FindBy(id = "com.afterpaymobile:id/internal_entry_view")
+    @FindBy(id = "com.afterpaymobile.qatest:id/internal_entry_view")
     MobileElement codeEntryField;
 
 

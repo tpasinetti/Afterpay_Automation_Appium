@@ -1,0 +1,24 @@
+# Created at 2021-03-02T13:15:35.357
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+
+# Created at 2021-03-02T13:15:35.358
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+
+# Created at 2021-03-02T13:15:35.358
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+
+# Created at 2021-03-02T13:15:44.052
+WARNING: An illegal reflective access operation has occurred
+
+# Created at 2021-03-02T13:15:44.053
+WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$1 (file:/Users/tinika.pasinetti/.m2/repository/cglib/cglib/3.2.10/cglib-3.2.10.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+
+# Created at 2021-03-02T13:15:44.053
+WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$1
+
+# Created at 2021-03-02T13:15:44.054
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+
+# Created at 2021-03-02T13:15:44.054
+WARNING: All illegal access operations will be denied in a future release
+

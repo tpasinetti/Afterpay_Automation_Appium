@@ -1,0 +1,16 @@
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/models/data_providers/CsvToCreateAccountData.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/models/data_models/ANZ_CreateAccountData.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/tests/ANZ/CreateAccountTests/FieldValidationErrorTests.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/tests/ANZ/CreateAccountTests/ExistingAccountErrorTests.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/appium_infrastructure/AppiumHelper.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/screens/SMSVerification/SMSVerification.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/tests/ANZ/CreateAccountTests/ContinueButtonTests.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/tests/ANZ/CreateAccountTests/WeakPasswordValidationErrorTests.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/tests/ANZ/VerificationScreenTests/VerificationScreenTests.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/screens/SMSVerification/SMSVerificationPOM.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/screens/CreateAccount/CreateAccountPOM.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/models/data_providers/CreateAccountDataProvider.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/screens/CreateAccount/CreateAccount.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/appium_infrastructure/AppiumBaseClass.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/appium_infrastructure/AppiumController.java
+/Users/tinika.pasinetti/Documents/Afterpay_Automation/app.appium/src/test/java/com/afterpay/app/appium/tests/ANZ/BaseTest.java

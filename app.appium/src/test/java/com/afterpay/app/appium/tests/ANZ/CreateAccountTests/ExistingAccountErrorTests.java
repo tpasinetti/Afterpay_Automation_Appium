@@ -3,42 +3,39 @@ package com.afterpay.app.appium.tests.ANZ.CreateAccountTests;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import com.afterpay.app.appium.models.data_models.ANZ_CreateAccountData;
+import com.afterpay.app.appium.models.data_providers.CsvToCreateAccountData;
 import com.afterpay.app.appium.tests.ANZ.BaseTest;
 
 import org.json.simple.parser.ParseException;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
-public class ExistingAccountErrorTests extends BaseTest{
-   
+public class ExistingAccountErrorTests extends BaseTest {
+
     @Test
     public void verifyExistingAccountError_Mobile() throws FileNotFoundException, IOException, ParseException {
-        createAccount.enterEmailTextField("t2_android@test.com");
-        createAccount.enterPasswordTextField("111");
-        createAccount.enterMobileNumber("0402599157"); // mobile number already been used
-        createAccount.clickContinueButton();
+        createAccountScreen.enterEmailTextField("t2_android@test.com");
+        createAccountScreen.enterPasswordTextField("111");
+        createAccountScreen.enterMobileNumber("0402599157"); // mobile number already been used
+        createAccountScreen.clickContinueButton();
         Assert.assertEquals(getErrorCodeFromJSONFile("existingAccountError"),
-                createAccount.getRegistrationErrorMessage());
+                createAccountScreen.getRegistrationErrorMessage());
 
     }
 
-    // // need to check if we allow same email address
-    // @ParameterizedTest
-    // @CsvFileSource(resources = "/dataResources/CreateAccountData.csv",
-    // numLinesToSkip = 1)
-    // public void verifyExistingAccountError_Email(@CsvToCreateAccountData
-    // ANZ_CreateAccountData createAccountData)
-    // throws InterruptedException, FileNotFoundException, IOException,
-    // ParseException {
+    // need to check if we allow same email address
+    @ParameterizedTest
+    @CsvSource({ "existingemail@test.com,Test@123,0402888551" })
+    public void verifyExistingAccountError_Email(@CsvToCreateAccountData ANZ_CreateAccountData createAccountData)
+            throws InterruptedException, FileNotFoundException, IOException, ParseException {
 
-    // createAccount.enterEmailTextField(createAccountData.getEmail()); // email
-    // already been used
-    // createAccount.enterPasswordTextField(createAccountData.getPassword());
-    // createAccount.enterMobileNumber(createAccountData.getMobileNumber());
-    // createAccount.clickContinueButton();
+        createAccountScreen.enterAllCreateAccountDetails(createAccountData); // email already in use
+        createAccountScreen.clickContinueButton();
+        Assert.assertEquals(getErrorCodeFromJSONFile("existingAccountError"),
+                createAccountScreen.getRegistrationErrorMessage());
 
-    // Assert.assertEquals(getErrorCodeFromJSONFile("existingAccountError"),
-    // createAccount.getRegistrationErrorMessage());
-
-    // }
+    }
 }

@@ -12,24 +12,39 @@ import org.junit.Assert;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-public class VerificationScreenTests extends BaseTest{
+import static io.qameta.allure.Allure.step;
+
+public class VerificationScreenTests extends BaseTest {
     @ParameterizedTest
-    @CsvFileSource(resources = "/dataResources/SuccessfulCreateAccountData.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/data_resources/SuccessfulCreateAccountData.csv", numLinesToSkip = 1)
     public void verifyErrorForInvalidCode(@CsvToCreateAccountData ANZ_CreateAccountData createAccountData)
             throws FileNotFoundException, IOException, ParseException {
-        createAccount.enterAllCreateAccountDetails(createAccountData);
-        createAccount.clickContinueButton();
-        verification.enterVerificationCode("222222");
-        Assert.assertEquals(getErrorCodeFromJSONFile("verificationError"), verification.getIncorrectCodeError());
+        createAccountScreen.enterAllCreateAccountDetails(createAccountData);
+        createAccountScreen.clickContinueButton();
+        verificationScreen.enterVerificationCode("222222");
+        Assert.assertEquals(getErrorCodeFromJSONFile("verificationError"), verificationScreen.getIncorrectCodeError());
     }
 
-    // @ParameterizedTest
-    // @CsvFileSource(resources = "/dataResources/SuccessfulCreateAccountData.csv", numLinesToSkip = 1)
-    // public void clickResendButtonAndVerifyToast(@CsvToCreateAccountData CreateAccountData createAccountData) {
+    @ParameterizedTest
+    @CsvFileSource(resources = "/data_resources/SuccessfulCreateAccountData.csv", numLinesToSkip = 1)
+    public void verifyToastAfterClickingResend(@CsvToCreateAccountData ANZ_CreateAccountData createAccountData)
+            throws FileNotFoundException, IOException, ParseException {
 
-    //     createAccount.enterAllCreateAccountDetails(createAccountData);
-    //     createAccount.clickContinueButton();
-    //     verification.clickMobileCodeResendButton();
+        createAccountScreen.enterAllCreateAccountDetails(createAccountData);
+        createAccountScreen.clickContinueButton();
+        verificationScreen.clickMobileCodeResendButton();
+        Assert.assertEquals(getToastMessageFromJSONFile("verificationToast"), verificationScreen.getToastMessage());
+    }
 
-    // }
+    @ParameterizedTest
+    @CsvFileSource(resources = "/data_resources/SuccessfulCreateAccountData.csv", numLinesToSkip = 1)
+    public void verifyUserCanVerifyMobileNumber(@CsvToCreateAccountData ANZ_CreateAccountData createAccountData)
+            throws FileNotFoundException, IOException, ParseException {
+
+        createAccountScreen.enterAllCreateAccountDetails(createAccountData);
+        createAccountScreen.clickContinueButton();
+
+        step("Verify verification screen is displayed");
+        Assert.assertTrue(verificationScreen.verifyVerificationScreenIsLoaded());
+    }
 }

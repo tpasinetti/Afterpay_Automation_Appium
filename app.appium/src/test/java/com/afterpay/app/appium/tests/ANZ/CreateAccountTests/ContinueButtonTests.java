@@ -16,15 +16,16 @@ public class ContinueButtonTests extends BaseTest{
     
     @Test
     public void verifyContinueButtonIsDisabled() {
-        Assert.assertEquals(false, createAccount.isContinueButtonEnabled());
+       
+        Assert.assertEquals(false, createAccountScreen.isContinueButtonEnabled());
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/dataResources/SuccessfulCreateAccountData.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/data_resources/SuccessfulCreateAccountData.csv", numLinesToSkip = 1)
     public void verifyVerificationScreenAfterSuccessfulCreateAccount(@CsvToCreateAccountData ANZ_CreateAccountData createAccountData)
             throws InterruptedException {
-        createAccount.enterAllCreateAccountDetails(createAccountData);
-        createAccount.clickContinueButton();
-        Assert.assertTrue(verification.verifyVerificationScreenIsLoaded());
+        createAccountScreen.enterAllCreateAccountDetails(createAccountData);
+        createAccountScreen.clickContinueButton();
+        Assert.assertTrue(verificationScreen.verifyVerificationScreenIsLoaded());
     }
 }

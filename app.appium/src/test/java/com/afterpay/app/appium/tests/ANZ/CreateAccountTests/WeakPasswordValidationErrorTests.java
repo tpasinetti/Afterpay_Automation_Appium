@@ -22,19 +22,19 @@ import static io.qameta.allure.Allure.step;
 
 public class WeakPasswordValidationErrorTests extends BaseTest {
 
-    
     @Severity(SeverityLevel.CRITICAL)
     @Feature("Verify weak password validation")
     @Story("User is shown a registration errow when trying to create an account with a weak password")
     @Link("https://link_to_notion_placeholder")
     @Description("This test verifies the weak password verification error message")
-    @CsvFileSource(resources = "/dataResources/CreateAccountWeakPasswordData.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/data_resources/CreateAccountWeakPasswordData.csv", numLinesToSkip = 1)
     @ParameterizedTest
     public void verifyWeakPasswordError(@CsvToCreateAccountData ANZ_CreateAccountData createAccountData)
             throws FileNotFoundException, IOException, ParseException {
         step("Open Create account page");
-        createAccount.enterAllCreateAccountDetails(createAccountData);
-        createAccount.clickContinueButton();
-        Assert.assertEquals(getErrorCodeFromJSONFile("weakPasswordError") , createAccount.getRegistrationErrorMessage());
+        createAccountScreen.enterAllCreateAccountDetails(createAccountData);
+        createAccountScreen.clickContinueButton();
+        Assert.assertEquals(getErrorCodeFromJSONFile("weakPasswordError"),
+                createAccountScreen.getRegistrationErrorMessage());
     }
 }

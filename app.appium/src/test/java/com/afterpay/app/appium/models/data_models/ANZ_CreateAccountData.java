@@ -5,21 +5,8 @@ public class ANZ_CreateAccountData {
     private String email = null;
     private String password = null;
     private String mobileNumber = null;
+    private String firstName = null;
 
-    public ANZ_CreateAccountData withEmail(String email) {
-        setEmail(email);
-        return this;
-    }
-
-    public ANZ_CreateAccountData withPassword(String password) {
-        setPassword(password);
-        return this;
-    }
-
-    public ANZ_CreateAccountData withMobileNumber(String mobileNumber) {
-        setMobileNumber(mobileNumber);
-        return this;
-    }
 
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
@@ -33,6 +20,10 @@ public class ANZ_CreateAccountData {
         this.email = email;
     }
 
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
+    }
+
     public String getEmail(){
         return email;
     }
@@ -43,6 +34,10 @@ public class ANZ_CreateAccountData {
 
     public String getMobileNumber(){
         return mobileNumber;
+    }
+
+    public String getFirstName(){
+        return firstName;
     }
 
     public String toString(){

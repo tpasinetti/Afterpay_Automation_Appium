@@ -29,36 +29,55 @@ public class CreateAccountPOM extends AppiumHelper implements CreateAccount {
 
     // EMAIL
     @FindBy(xpath = "//android.widget.EditText[@text='Email address']")
+    //@FindBy(id = "com.afterpaymobile.qatest:id/registration_email")
     public MobileElement emailTextField;
 
-    @FindBy(id = "com.afterpaymobile:id/error_message")
+    @FindBy(id = "com.afterpaymobile.qatest:id/error_message")
     public MobileElement emailErrorMessage;
 
     // PASSWORD
+    //@FindBy(xpath = "com.afterpaymobile.qatest:id/registration_password")
     @FindBy(xpath = "//android.widget.EditText[@text='Password']")
     public MobileElement passwordTextField;
 
     // MOBILE NUMBER
-    @FindBy(id = "com.afterpaymobile:id/phone_number_input")
+    @FindBy(id = "com.afterpaymobile.qatest:id/phone_number_input")
+    //@FindBy(xpath = "//android.widget.EditText[@text='Phone Number']")
     public MobileElement mobileNumberField;
+
+    @FindBy(id = "com.afterpaymobile.qatest:id/country_picker")
+    public MobileElement countryPicker;
+
+    @FindBy(id="com.afterpaymobile.qatest:id/country_dial_code")
+    MobileElement countryDialCode;
+
+    @FindBy(xpath = "//android.widget.TextView[@text='New Zealand']")
+    MobileElement nZCountryFromDropDown;
 
     @FindBy(id = "com.afterpaymobile:id/phone_number_error_view")
     public MobileElement mobileErrorMessage;
 
     // BUTTONS
-    @FindBy(id = "com.afterpaymobile:id/submit_button")
+    @FindBy(id = "com.afterpaymobile.qatest:id/submit_button")
     public MobileElement continueBtn;
 
-    @FindBy(id = "com.afterpaymobile:id/text_input_end_icon")
+    @FindBy(id = "com.afterpaymobile.qatest:id/text_input_end_icon")
     public MobileElement showPassword;
 
     // ERRORS
-    @FindBy(id = "com.afterpaymobile:id/registration_error_message")
+    @FindBy(id = "com.afterpaymobile.qatest:id/registration_error_message")
     public MobileElement registrationError;
 
     // TITLE
-    @FindBy(id = "com.afterpaymobile:id/title")
+    @FindBy(id = "com.afterpaymobile.qatest:id/title")
     MobileElement createAccountTitle;
+
+    //DEV SETTINGS
+    @FindBy(xpath = "//android.widget.TextView[@text='Testing']")
+    public MobileElement testSettings;
+
+    @FindBy(xpath = "//android.widget.RadioButton[@text='SANDBOX']")
+    public MobileElement sandboxRadioButton;
 
     /*
      * METHODS
@@ -118,12 +137,30 @@ public class CreateAccountPOM extends AppiumHelper implements CreateAccount {
         return getText(registrationError);
     }
 
+    //OTHER GETTERS
     @Override
     public String getTitle() {
         return getText(createAccountTitle);
     }
 
-    
+    @Override
+    public String getDialCode() {
+        return getText(countryDialCode);
+    }
+
+    @Override
+    public void selectNZFromCountryFlagPicker() {
+        clickElement(nZCountryFromDropDown);
+        
+    }
+
+    @Override
+    public void clickCountryDropDown() {
+        clickElement(countryPicker);
+        
+    }
+
+  
 
     
 

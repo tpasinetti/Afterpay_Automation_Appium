@@ -16,7 +16,6 @@ public class ContinueButtonTests extends BaseTest{
     
     @Test
     public void verifyContinueButtonIsDisabled() {
-       
         Assert.assertEquals(false, createAccountScreen.isContinueButtonEnabled());
     }
 

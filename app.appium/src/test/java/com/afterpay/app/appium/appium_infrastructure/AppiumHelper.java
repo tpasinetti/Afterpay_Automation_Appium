@@ -18,13 +18,6 @@ public class AppiumHelper {
 		return AppiumController.instance.driver.getPageSource();
 	}
 
-	protected void shakeDeviceToShowDevSettings(){
-		AppiumController.instance.driver.rotate(new DeviceRotation(0,0,90));
-		AppiumController.instance.driver.rotate(new DeviceRotation(0,90,0));
-		AppiumController.instance.driver.rotate(new DeviceRotation(0,0,90));
-		AppiumController.instance.driver.rotate(ScreenOrientation.PORTRAIT);
-	}
-
 	protected void inputString(MobileElement mobileElement, String stringToBeEntered) {
 		mobileElement = waitTillElementVisible(mobileElement);
 		mobileElement.sendKeys(stringToBeEntered);
@@ -69,6 +62,12 @@ public class AppiumHelper {
 
 	private MobileElement waitTillElementVisible(MobileElement mobileElement) {
 		return (MobileElement) wait.until(ExpectedConditions.visibilityOf(mobileElement));
+
+	}
+
+	protected void verticalScroll(MobileElement elemnent){
+		
+
 
 	}
 

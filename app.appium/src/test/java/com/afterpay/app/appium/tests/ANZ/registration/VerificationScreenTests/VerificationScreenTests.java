@@ -21,7 +21,7 @@ public class VerificationScreenTests extends BaseTest {
             throws FileNotFoundException, IOException, ParseException {
         createAccountScreen.enterAllCreateAccountDetails(createAccountData);
         createAccountScreen.clickContinueButton();
-        verificationScreen.enterVerificationCode("222222");
+        verificationScreen.enterVerificationCode(createAccountData);
         Assert.assertEquals(getErrorCodeFromJSONFile("verificationError"), verificationScreen.getIncorrectCodeError());
     }
 

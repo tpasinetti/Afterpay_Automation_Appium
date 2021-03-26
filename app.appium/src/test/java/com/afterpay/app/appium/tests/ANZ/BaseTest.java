@@ -6,6 +6,9 @@ import java.io.IOException;
 
 import com.afterpay.app.appium.appium_infrastructure.AppiumBaseClass;
 import com.afterpay.app.appium.appium_infrastructure.AppiumController;
+import com.afterpay.app.appium.screens.home.DiscoverScreen;
+import com.afterpay.app.appium.screens.home.DiscoverScreenPOM;
+import com.afterpay.app.appium.screens.registration.CompleteYourProfile.AddressBottomSheetPOM;
 import com.afterpay.app.appium.screens.registration.CompleteYourProfile.CompleteYourProfilePOM;
 import com.afterpay.app.appium.screens.registration.CreateAccount.CreateAccountPOM;
 import com.afterpay.app.appium.screens.registration.SMSVerification.SMSVerificationPOM;
@@ -16,12 +19,17 @@ import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
+import okhttp3.Address;
+
 public class BaseTest extends AppiumBaseClass{
     
   
 	protected CreateAccountPOM createAccountScreen;
 	protected SMSVerificationPOM verificationScreen;
 	protected CompleteYourProfilePOM completeYourProfileScreen;
+	protected AddressBottomSheetPOM addressBottomSheet;
+	protected DiscoverScreen discoverScreen;
+
 
 	@BeforeEach
 	public void setUp() throws Exception {
@@ -32,6 +40,8 @@ public class BaseTest extends AppiumBaseClass{
 				createAccountScreen = new CreateAccountPOM(driver());
 				verificationScreen = new SMSVerificationPOM(driver());
 				completeYourProfileScreen = new CompleteYourProfilePOM(driver());
+				addressBottomSheet = new AddressBottomSheetPOM(driver());
+				discoverScreen = new DiscoverScreenPOM(driver());
 				break;
 
 		}

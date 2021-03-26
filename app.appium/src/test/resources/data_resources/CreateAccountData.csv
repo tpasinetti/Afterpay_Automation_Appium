@@ -1,2 +1,2 @@
-Email,Password,Mobile Number
-t2_android@test.com,Test@123,0411456899
+Email,Password,Mobile Number,Verification Code,First Name,Middle Name,Last Name,DOBYear,DOBDay,Address
+2603_34@test.com,Test@123,0424573272,111111,First,Middle,Last,1994,5,70 Jensen Road

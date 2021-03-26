@@ -17,6 +17,13 @@ public class CreateAccountDataProvider implements ArgumentsAggregator {
         accountData.setEmail(accessor.getString(0));
         accountData.setPassword(accessor.getString(1));
         accountData.setMobileNumber(accessor.getString(2));
+        accountData.setVerificationCode(accessor.getString(3));
+        accountData.setFirstName(accessor.getString(4));
+        accountData.setMiddleName(accessor.getString(5));
+        accountData.setLastName(accessor.getString(6));
+        accountData.setDOBYear(accessor.getString(7));
+        accountData.setDOBDay(accessor.getString(8));
+        accountData.setAddress(accessor.getString(9));
 
         return accountData;
     }

@@ -3,7 +3,7 @@ package com.afterpay.app.appium.tests.ANZ.registration.CreateAccountTests;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import com.afterpay.app.appium.models.data_models.ANZ_CreateAccountData;
+import com.afterpay.app.appium.models.data_models.CreateAccountData;
 import com.afterpay.app.appium.models.data_providers.CsvToCreateAccountData;
 import com.afterpay.app.appium.tests.ANZ.BaseTest;
 
@@ -29,7 +29,7 @@ public class WeakPasswordValidationErrorTests extends BaseTest {
     @Description("This test verifies the weak password verification error message")
     @CsvFileSource(resources = "/data_resources/CreateAccountWeakPasswordData.csv", numLinesToSkip = 1)
     @ParameterizedTest
-    public void verifyWeakPasswordError(@CsvToCreateAccountData ANZ_CreateAccountData createAccountData)
+    public void verifyWeakPasswordError(@CsvToCreateAccountData CreateAccountData createAccountData)
             throws FileNotFoundException, IOException, ParseException {
         step("Open Create account page");
         createAccountScreen.enterAllCreateAccountDetails(createAccountData);

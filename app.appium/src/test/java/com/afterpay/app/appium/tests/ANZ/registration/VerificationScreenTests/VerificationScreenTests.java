@@ -3,7 +3,7 @@ package com.afterpay.app.appium.tests.ANZ.registration.VerificationScreenTests;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import com.afterpay.app.appium.models.data_models.ANZ_CreateAccountData;
+import com.afterpay.app.appium.models.data_models.CreateAccountData;
 import com.afterpay.app.appium.models.data_providers.CsvToCreateAccountData;
 import com.afterpay.app.appium.tests.ANZ.BaseTest;
 
@@ -17,7 +17,7 @@ import static io.qameta.allure.Allure.step;
 public class VerificationScreenTests extends BaseTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/data_resources/SuccessfulCreateAccountData.csv", numLinesToSkip = 1)
-    public void verifyErrorForInvalidCode(@CsvToCreateAccountData ANZ_CreateAccountData createAccountData)
+    public void verifyErrorForInvalidCode(@CsvToCreateAccountData CreateAccountData createAccountData)
             throws FileNotFoundException, IOException, ParseException {
         createAccountScreen.enterAllCreateAccountDetails(createAccountData);
         createAccountScreen.clickContinueButton();
@@ -27,7 +27,7 @@ public class VerificationScreenTests extends BaseTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/data_resources/SuccessfulCreateAccountData.csv", numLinesToSkip = 1)
-    public void verifyToastAfterClickingResend(@CsvToCreateAccountData ANZ_CreateAccountData createAccountData)
+    public void verifyToastAfterClickingResend(@CsvToCreateAccountData CreateAccountData createAccountData)
             throws FileNotFoundException, IOException, ParseException {
 
         createAccountScreen.enterAllCreateAccountDetails(createAccountData);
@@ -38,7 +38,7 @@ public class VerificationScreenTests extends BaseTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/data_resources/SuccessfulCreateAccountData.csv", numLinesToSkip = 1)
-    public void verifyUserCanVerifyMobileNumber(@CsvToCreateAccountData ANZ_CreateAccountData createAccountData)
+    public void verifyUserCanVerifyMobileNumber(@CsvToCreateAccountData CreateAccountData createAccountData)
             throws FileNotFoundException, IOException, ParseException {
 
         createAccountScreen.enterAllCreateAccountDetails(createAccountData);

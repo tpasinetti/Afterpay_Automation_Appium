@@ -3,7 +3,7 @@ package com.afterpay.app.appium.tests.ANZ.registration.CreateAccountTests;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import com.afterpay.app.appium.models.data_models.ANZ_CreateAccountData;
+import com.afterpay.app.appium.models.data_models.CreateAccountData;
 import com.afterpay.app.appium.models.data_providers.CsvToCreateAccountData;
 import com.afterpay.app.appium.tests.ANZ.BaseTest;
 
@@ -21,7 +21,7 @@ public class FieldValidationTests extends BaseTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/data_resources/InvalidCreateAccountDetailsd.csv", numLinesToSkip = 1)
     public void verifyInvalidEmailAndMobileErrorMessages(
-            @CsvToCreateAccountData ANZ_CreateAccountData createAccountData)
+            @CsvToCreateAccountData CreateAccountData createAccountData)
             throws FileNotFoundException, IOException, ParseException {
 
         createAccountScreen.enterAllCreateAccountDetails(createAccountData);
@@ -37,7 +37,7 @@ public class FieldValidationTests extends BaseTest {
     @ParameterizedTest
     @CsvSource({ "1903_6@test.com,Test@123,0402888551" })
     public void verifyUserCanEnterMobileNumberWithLeadingZero(
-            @CsvToCreateAccountData ANZ_CreateAccountData createAccountData)
+            @CsvToCreateAccountData CreateAccountData createAccountData)
             throws FileNotFoundException, IOException, ParseException {
 
         createAccountScreen.enterAllCreateAccountDetails(createAccountData);

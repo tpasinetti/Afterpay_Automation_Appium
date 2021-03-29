@@ -1,6 +1,6 @@
 package com.afterpay.app.appium.screens.registration.CreateAccount;
 
-import com.afterpay.app.appium.models.data_models.ANZ_CreateAccountData;
+import com.afterpay.app.appium.models.data_models.CreateAccountData;
 
 public interface CreateAccount {
     
@@ -21,7 +21,7 @@ public interface CreateAccount {
     public Boolean isContinueButtonEnabled();
 
     //ACTIONS
-    public void enterAllCreateAccountDetails(ANZ_CreateAccountData createAccountData);
+    public void enterAllCreateAccountDetails(CreateAccountData createAccountData);
     public void clickCountryDropDown();
     public void selectNZFromCountryFlagPicker();
 }

@@ -11,7 +11,7 @@ import static io.qameta.allure.Allure.step;
 
 import com.afterpay.app.appium.appium_infrastructure.AppiumController;
 import com.afterpay.app.appium.appium_infrastructure.AppiumHelper;
-import com.afterpay.app.appium.models.data_models.ANZ_CreateAccountData;
+import com.afterpay.app.appium.models.data_models.CreateAccountData;
 
 public class CreateAccountPOM extends AppiumHelper implements CreateAccount {
 
@@ -114,7 +114,7 @@ public class CreateAccountPOM extends AppiumHelper implements CreateAccount {
 
     // ONE STEP ENTER CREATE ACCOUNT DETAILS
     @Override
-    public void enterAllCreateAccountDetails(ANZ_CreateAccountData createAccountData) {
+    public void enterAllCreateAccountDetails(CreateAccountData createAccountData) {
         this.enterEmailTextField(createAccountData.getEmail());
         this.enterPasswordTextField(createAccountData.getPassword());
         this.enterMobileNumber(createAccountData.getMobileNumber());

@@ -3,7 +3,7 @@ package com.afterpay.app.appium.tests.ANZ.registration.CreateAccountTests;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import com.afterpay.app.appium.models.data_models.ANZ_CreateAccountData;
+import com.afterpay.app.appium.models.data_models.CreateAccountData;
 import com.afterpay.app.appium.models.data_providers.CsvToCreateAccountData;
 import com.afterpay.app.appium.tests.ANZ.BaseTest;
 
@@ -29,7 +29,7 @@ public class ExistingAccountErrorTests extends BaseTest {
     // need to check if we allow same email address
     @ParameterizedTest
     @CsvSource({ "existingemail@test.com,Test@123,0402888551" })
-    public void verifyExistingAccountError_Email(@CsvToCreateAccountData ANZ_CreateAccountData createAccountData)
+    public void verifyExistingAccountError_Email(@CsvToCreateAccountData CreateAccountData createAccountData)
             throws InterruptedException, FileNotFoundException, IOException, ParseException {
 
         createAccountScreen.enterAllCreateAccountDetails(createAccountData); // email already in use

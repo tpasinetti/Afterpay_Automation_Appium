@@ -1,6 +1,6 @@
 package com.afterpay.app.appium.models.data_providers;
 
-import com.afterpay.app.appium.models.data_models.ANZ_CreateAccountData;
+import com.afterpay.app.appium.models.data_models.CreateAccountData;
 
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
@@ -13,7 +13,7 @@ public class CreateAccountDataProvider implements ArgumentsAggregator {
     public Object aggregateArguments(ArgumentsAccessor accessor, ParameterContext context)
             throws ArgumentsAggregationException {
 
-        ANZ_CreateAccountData accountData = new ANZ_CreateAccountData();
+        CreateAccountData accountData = new CreateAccountData();
         accountData.setEmail(accessor.getString(0));
         accountData.setPassword(accessor.getString(1));
         accountData.setMobileNumber(accessor.getString(2));
@@ -23,7 +23,8 @@ public class CreateAccountDataProvider implements ArgumentsAggregator {
         accountData.setLastName(accessor.getString(6));
         accountData.setDOBYear(accessor.getString(7));
         accountData.setDOBDay(accessor.getString(8));
-        accountData.setAddress(accessor.getString(9));
+        accountData.setDOBString(accessor.getString(9));
+        accountData.setAddress(accessor.getString(10));
 
         return accountData;
     }

@@ -1,6 +1,6 @@
 package com.afterpay.app.appium.models.data_models;
 
-public class ANZ_CreateAccountData {
+public class CreateAccountData {
 
     private String email = null;
     private String password = null;
@@ -11,6 +11,7 @@ public class ANZ_CreateAccountData {
     private String lastName = null;
     private String dOBYear = null;
     private String dOBDay = null;
+    private String dOBString = null;
     private String address = null;
 
     public void setMobileNumber(String mobileNumber) {
@@ -45,6 +46,9 @@ public class ANZ_CreateAccountData {
     }
     public void setDOBDay(String dOBDay){
         this.dOBDay = dOBDay;
+    }
+    public void setDOBString(String dOBString){
+        this.dOBString = dOBString;
     }
 
     public void setAddress(String address){
@@ -87,12 +91,12 @@ public class ANZ_CreateAccountData {
         return dOBDay;
     }
 
-    public String getAddress(){
-        return address;
+    public String getDOBString(){
+        return dOBString;
     }
 
-    public String toString(){
-        return this.email + ", " + this.password + ", " + this.mobileNumber;
+    public String getAddress(){
+        return address;
     }
 
 }

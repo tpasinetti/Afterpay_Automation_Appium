@@ -1,7 +1,7 @@
 package com.afterpay.app.appium.tests.ANZ.registration;
 
 
-import com.afterpay.app.appium.models.data_models.ANZ_CreateAccountData;
+import com.afterpay.app.appium.models.data_models.CreateAccountData;
 import com.afterpay.app.appium.models.data_providers.CsvToCreateAccountData;
 import com.afterpay.app.appium.tests.ANZ.BaseTest;
 
@@ -15,7 +15,7 @@ public class E2ETests extends BaseTest{
 
     @ParameterizedTest
     @CsvFileSource(resources = "/data_resources/CreateAccountData.csv", numLinesToSkip = 1)
-    public void createANZUserAccount( @CsvToCreateAccountData ANZ_CreateAccountData createAccountData){
+    public void createANZUserAccount( @CsvToCreateAccountData CreateAccountData createAccountData){
         createAccountScreen.enterAllCreateAccountDetails(createAccountData);
         createAccountScreen.clickContinueButton();
 
@@ -24,12 +24,12 @@ public class E2ETests extends BaseTest{
         completeYourProfileScreen.enterNameDetails(createAccountData);
 
         completeYourProfileScreen.openDOBPicker();
-        completeYourProfileScreen.selectDOBFromPicker(createAccountData);
-        completeYourProfileScreen.clickDatePickerSelectButton();
+        dobPicker.selectDOBFromPicker(createAccountData);
+        dobPicker.clickDatePickerSelectButton();
 
         completeYourProfileScreen.openAddressBottomSheet();
 
-        addressBottomSheet.enterAddressString(createAccountData);
+        addressBottomSheet.enterAddressAndSelectSuggestionByIndex(createAccountData, 1);
 
         completeYourProfileScreen.clickAgreeAndContinueButton();
 

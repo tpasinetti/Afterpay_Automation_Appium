@@ -2,7 +2,7 @@ package com.afterpay.app.appium.screens.registration.CompleteYourProfile;
 
 import com.afterpay.app.appium.appium_infrastructure.AppiumController;
 import com.afterpay.app.appium.appium_infrastructure.AppiumHelper;
-import com.afterpay.app.appium.models.data_models.ANZ_CreateAccountData;
+import com.afterpay.app.appium.models.data_models.CreateAccountData;
 
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -37,14 +37,8 @@ public class CompleteYourProfilePOM extends AppiumHelper implements CompleteYour
     @FindBy(id = "com.afterpaymobile.qatest:id/profile_creation_dob")
     MobileElement dOBPicker;
 
-    @FindBy(id = "com.afterpaymobile.qatest:id/month_grid")
-    MobileElement dOBMonthGrid;
-
-    @FindBy(id = "com.afterpaymobile.qatest:id/month_navigation_fragment_toggle")
-    MobileElement dOBYearDropDown;
-
-    @FindBy(id = "com.afterpaymobile.qatest:id/confirm_button")
-    MobileElement datePickerSelectButton;
+    @FindBy(id = "com.afterpaymobile.qatest:id/error_message")
+    MobileElement dOBErrorMessage;
 
     //ADDRESS
     @FindBy(xpath = "//android.widget.EditText[@text='Residential address']")
@@ -60,55 +54,25 @@ public class CompleteYourProfilePOM extends AppiumHelper implements CompleteYour
     }
 
     @Override
-    public void enterFirstNameField(String firstName) {
-        inputString(firstNameField, firstName);
+    public void enterFirstNameField(CreateAccountData createAccountData) {
+        inputString(firstNameField, createAccountData.getFirstName());
     }
 
     @Override
-    public void enterMiddleNameField(String middleName) {
-        inputString(middleNameField, middleName);
+    public void enterMiddleNameField(CreateAccountData createAccountData) {
+        inputString(middleNameField, createAccountData.getMiddleName());
     }
 
     @Override
-    public void enterLastNameField(String lastName) {
-        inputString(lastNameField, lastName);
+    public void enterLastNameField(CreateAccountData createAccountData) {
+        inputString(lastNameField, createAccountData.getLastName());
     }
 
-    @Override
-    public void enterDOBString(String dob) {
-    }
-
+    
     //DOB
     @Override
     public void openDOBPicker() {
         clickElement(dOBPicker);
-    }
-
-
-    @Override
-    public void selectDOBDay(String day){
-        clickElement(dOBMonthGrid.findElementByXPath("//android.widget.TextView[@text='"+ day + "']"));
-    }
-
-    @Override
-    public void selectDOBYear(String year){
-        clickElement(dOBYearDropDown);
-        AndroidElement list = (AndroidElement) AppiumController.instance.driver.findElementByXPath("//android.widget.TextView[contains(@content-desc, 'Navigate to year')]");
-        MobileElement yearItem = (MobileElement) AppiumController.instance.driver.findElement(
-            MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().scrollable(true))" +
-         ".scrollIntoView(new UiSelector().text(\"1993\"))"));
-        clickElement(yearItem);
-    }
-
-    @Override
-    public void clickDatePickerSelectButton() {
-        clickElement(datePickerSelectButton); 
-    }
-
-    public void selectDOB(String year, String day){
-        selectDOBYear(year);
-        selectDOBDay(day);
     }
 
     @Override
@@ -122,15 +86,15 @@ public class CompleteYourProfilePOM extends AppiumHelper implements CompleteYour
     }
 
     @Override
-    public void enterNameDetails(ANZ_CreateAccountData createAccountData) {
-       this.enterFirstNameField(createAccountData.getFirstName());
-       this.enterMiddleNameField(createAccountData.getMiddleName());
-       this.enterLastNameField(createAccountData.getLastName());
+    public void enterNameDetails(CreateAccountData createAccountData) {
+       this.enterFirstNameField(createAccountData);
+       this.enterMiddleNameField(createAccountData);
+       this.enterLastNameField(createAccountData);
     }
 
     @Override
-    public void selectDOBFromPicker(ANZ_CreateAccountData createAccountData) {
-       this.selectDOB(createAccountData.getDOBYear(), createAccountData.getDOBDay());
+    public String getDOBError() {
+        return getText(dOBErrorMessage);
     }
 
     

@@ -3,5 +3,7 @@
     "existingAccountError" : "Whoops, it looks like you already have an Afterpay account. Please go back and log in with the email address you used to create it.",
     "invalidEmailError" : "Please enter a valid email address",
     "invalidMobileError" : "Please enter a valid mobile number",
-    "weakPasswordError" : "Please choose a stronger password."
+    "weakPasswordError" : "Please choose a stronger password.",
+    "DOBUnderage" : "You must be over 18 and the legal age in your state of residency",
+    "addressSearchError" : "No matches found"
 }

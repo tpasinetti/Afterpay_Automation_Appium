@@ -2,7 +2,7 @@ package com.afterpay.app.appium.screens.registration.SMSVerification;
 
 import com.afterpay.app.appium.appium_infrastructure.AppiumController;
 import com.afterpay.app.appium.appium_infrastructure.AppiumHelper;
-import com.afterpay.app.appium.models.data_models.ANZ_CreateAccountData;
+import com.afterpay.app.appium.models.data_models.CreateAccountData;
 import com.afterpay.app.appium.screens.registration.CreateAccount.CreateAccount;
 
 import org.openqa.selenium.support.FindBy;
@@ -77,7 +77,7 @@ public class SMSVerificationPOM extends AppiumHelper implements SMSVerification{
     }
 
     @Override
-    public void enterVerificationCode(ANZ_CreateAccountData createAccountData) {
+    public void enterVerificationCode(CreateAccountData createAccountData) {
         this.setVerificationCode(createAccountData.getVerificationCode());
        
         

@@ -1,7 +1,5 @@
 package com.afterpay.app.appium.appium_infrastructure;
 
-import org.openqa.selenium.DeviceRotation;
-import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 

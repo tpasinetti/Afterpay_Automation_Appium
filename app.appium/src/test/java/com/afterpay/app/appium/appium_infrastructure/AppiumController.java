@@ -20,9 +20,14 @@ import static io.qameta.allure.Allure.step;
 public class AppiumController {
 
 	public static OS executionOS = OS.ANDROID;
+	public static VARIANT appVariant = VARIANT.OCEANIA_TEST;
 
 	public enum OS {
 		ANDROID
+	}
+
+	public enum VARIANT {
+		OCEANIA_TEST
 	}
 
 	public static AppiumController instance = new AppiumController();

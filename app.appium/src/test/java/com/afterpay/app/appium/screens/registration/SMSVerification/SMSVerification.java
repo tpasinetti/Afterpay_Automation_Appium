@@ -1,6 +1,6 @@
 package com.afterpay.app.appium.screens.registration.SMSVerification;
 
-import com.afterpay.app.appium.models.data_models.ANZ_CreateAccountData;
+import com.afterpay.app.appium.models.data_models.CreateAccountData;
 
 public interface SMSVerification {
     
@@ -14,5 +14,5 @@ public interface SMSVerification {
 
     public Boolean verifyVerificationScreenIsLoaded();
 
-    public void enterVerificationCode(ANZ_CreateAccountData createAccountData);
+    public void enterVerificationCode(CreateAccountData createAccountData);
 }

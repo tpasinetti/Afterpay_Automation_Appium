@@ -1,25 +1,19 @@
 package com.afterpay.app.appium.screens.registration.CompleteYourProfile;
 
-import com.afterpay.app.appium.models.data_models.ANZ_CreateAccountData;
+import com.afterpay.app.appium.models.data_models.CreateAccountData;
 
 public interface CompleteYourProfile {
     
     public String getScreenTitle();
 
-    public void enterFirstNameField(String firstName);
-    public void enterMiddleNameField(String middleName);
-    public void enterLastNameField(String lastName);
-    public void enterDOBString(String dob);
-
+    public void enterFirstNameField(CreateAccountData createAccountData);
+    public void enterMiddleNameField(CreateAccountData createAccountData);
+    public void enterLastNameField(CreateAccountData createAccountData);
+    public void enterNameDetails(CreateAccountData createAccountData);
+    
     public void openDOBPicker();
-    public void selectDOBDay(String day);
-    public void selectDOBYear(String year);
-    public void clickDatePickerSelectButton();
-
+    public String getDOBError();
+    
     public void openAddressBottomSheet();
-
     public void clickAgreeAndContinueButton();
-
-    public void enterNameDetails(ANZ_CreateAccountData createAccountData);
-    public void selectDOBFromPicker(ANZ_CreateAccountData createAccountData);
 }
